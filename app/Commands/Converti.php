@@ -65,8 +65,15 @@ class Converti extends Command
             ["name" => "Ip", "start" => "15.00", "end" => "16.00"],
             ["name" => "Osas", "start" => "15.00", "end" => "16.00"],
             ["name" => "Allergologia", "start" => "15.00", "end" => "16.00"],
+            ["name" => "Cpet", "start" => "15.00", "end" => "16.00"],
+            ["name" => "Niv", "start" => "15.00", "end" => "16.00"],
             ["name" => "Refertazione", "start" => "8.00", "end" => "15.26"],
-            ["name" => "Dh", "start" => "8.00", "end" => "15.26"]
+            ["name" => "Refertazione capillaroscopia", "start" => "8.00", "end" => "15.26"],
+            ["name" => "Dh", "start" => "8.00", "end" => "15.26"],
+            ["name" => "Fisiopatologia", "start" => "8.00", "end" => "15.26"],
+            ["name" => "Rar maggiore", "start" => "15.00", "end" => "16.30"],
+            ["name" => "Rar cattinara", "start" => "15.00", "end" => "16.30"],
+            ["name" => "Asma grave", "start" => "8.00", "end" => "15.26"]
         ]);
     }
 
@@ -123,9 +130,11 @@ class Converti extends Command
                                          ->concat($this->medici);
         });
         $this->medici = $this->medici->unique()->values();
+
         $this->info("Trovati questi medici:");
-        echo $this->medici->values();
-        $this->confirm("procedo?");
+        echo $this->medici->sort()->values();
+        if(!$this->confirm("procedo?"))
+            exit;
         // TODO
         // Fare controllo se ci sono nomi sbagliati o doppi, es. contenenti "/" o nomi simili per mal battitura
 
