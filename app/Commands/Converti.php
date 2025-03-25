@@ -46,6 +46,11 @@ class Converti extends Command
      */
     private function crea_servizi()
     {
+        // if( !is_readable( $filename ) ) {
+            // $this->error("File $filename non leggibile");
+            // return false;
+        // }
+
         $this->services = collect([
             ["name" => "Reparto", "start" => "8.00", "end" => "15.26"],
             ["name" => "Covid", "start" => "8.00", "end" => "15.26"],
@@ -69,10 +74,15 @@ class Converti extends Command
             ["name" => "Niv", "start" => "15.00", "end" => "16.00"],
             ["name" => "Refertazione", "start" => "8.00", "end" => "15.26"],
             ["name" => "Refertazione capillaroscopia", "start" => "8.00", "end" => "15.26"],
+            ["name" => "Capillaroscopia", "start" => "8.00", "end" => "15.26"],
             ["name" => "Dh", "start" => "8.00", "end" => "15.26"],
+            ["name" => "Dh_ricerca", "start" => "8.00", "end" => "15.26"],
+            ["name" => "Sdo-chiusure", "start" => "8.00", "end" => "15.26"],
             ["name" => "Fisiopatologia", "start" => "8.00", "end" => "15.26"],
             ["name" => "Rar maggiore", "start" => "15.00", "end" => "16.30"],
             ["name" => "Rar cattinara", "start" => "15.00", "end" => "16.30"],
+            ["name" => "Pleura", "start" => "08.00", "end" => "15.26"],
+            ["name" => "Fumo", "start" => "14.00", "end" => "18.00"],
             ["name" => "Asma grave", "start" => "8.00", "end" => "15.26"]
         ]);
     }
